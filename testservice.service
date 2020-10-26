@@ -1,0 +1,15 @@
+[Unit]
+Description=test service
+After=network.target
+StartLimitBurst=3
+StartLimitIntervalSec=5
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=test
+ExecStart=/usr/local/test.sh
+
+[Install]
+WantedBy=multi-user.target
